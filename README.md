@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Facebook-Page][facebook-shield]][facebook-url]
+[![Twitter][twitter-shield]][twitter-url]
+[![Instagram][instagram-shield]][instagram-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Getting Started
+<p align="center">
+  <h3 align="center">NEXT LMS Platform</h3>
+  <div align="center"><h3>Project Link: <a href="https://github.com/rsshonjoydas/lms-platform">GitHub</a> or <a href="https://codesandbox.io/s/github/rsshonjoydas/lms-platform/tree/main">CodeSandbox</a></h3></div>
+</p>
 
-First, run the development server:
+<!-- TABLE OF CONTENTS -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [How to run](#how-to-run)
+- [Manual Setup](#manual-setup)
+- [Contact](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<!-- HOW TO RUN -->
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How to run
 
-## Learn More
+Please follow the below instructions to run this project in your computer:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone this repository
+   ```sh
+   git clone git@github.com:rsshonjoydas/lms-platform.git
+   ```
+2. Install this project using yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```
+   yarn install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. First, run the development server:
 
-## Deploy on Vercel
+   ```bash
+   yarn dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Manual Setup
+
+1.  Install Next JS
+
+    ```sh
+    yarn create next-app --typescript --tailwind --eslint
+    ```
+
+2.  Engine Locking configuration `optional`
+
+    - Create `.npmrc` file and add below the code
+
+      ```sh
+      engine-strict=true
+      ```
+
+    - Create `.nvmrc` file and add below the code
+
+      ```sh
+      lts/fermium
+      ```
+
+    - Add this configuration to your project `package.json`
+
+      ```json
+      "engines": {
+         "node": ">=14.0.0",
+         "yarn": ">=1.22.0",
+         "npm": "please-use-yarn"
+       }
+      ```
+
+3.  Visual Studio Settings configuration `optional`
+
+    - ##### Get VSCode [Settings.json](https://github.com/rsshonjoydas/docs/blob/main/docs/vscode.md) file
+
+4.  Airbnb style guide setup
+
+    - ##### Get [eslintrc.json](https://github.com/rsshonjoydas/docs/blob/main/docs/airbnb-style-guide.md) file
+
+5.  Git Hooks for Husky
+    - ##### [How to use husky](https://github.com/rsshonjoydas/docs/blob/main/docs/husky.md)
+
+## Contact
+
+Shonjoy Das - [rsshonjoy@gmail.com](mailto:rsshonjoy@gmail.com)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&color=555&logoColor
+[facebook-url]: https://facebook.com/rsshonjoydas
+[twitter-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=twitter&color=555&logoColor
+[twitter-url]: https://twitter.com/rsshonjoydas
+[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&color=555&logoColor
+[instagram-url]: https://instagram.com/rsshonjoydas
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB
+[linkedin-url]: https://linkedin.com/in/rsshonjoydas
