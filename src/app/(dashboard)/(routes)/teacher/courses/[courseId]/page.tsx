@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 // ? Local modules
 import { IconBadge } from '@/components/icon-badge';
 import prismadb from '@/lib/prismadb';
+import CategoryForm from './_components/category-form';
 import DescriptionForm from './_components/description-form';
 import ImageForm from './_components/image-form';
 import TitleForm from './_components/title-form';
@@ -28,6 +29,12 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
     const course = await prismadb.course.findUnique({
       where: {
         id: params.courseId,
+      },
+    });
+
+    const categories = await prismadb.category.findMany({
+      orderBy: {
+        name: 'asc',
       },
     });
 
@@ -66,6 +73,14 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
             <TitleForm initialData={course} courseId={course.id} />
             <DescriptionForm initialData={course} courseId={course.id} />
             <ImageForm initialData={course} courseId={course.id} />
+            <CategoryForm
+              initialData={course}
+              courseId={course.id}
+              options={categories.map((category) => ({
+                label: category.name,
+                value: category.id,
+              }))}
+            />
           </div>
         </div>
       </div>
