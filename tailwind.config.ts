@@ -1,6 +1,7 @@
 import animate from 'tailwindcss-animate';
+import { withUt } from 'uploadthing/tw';
 
-const config = {
+const config = withUt({
   darkMode: ['class'],
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
@@ -54,12 +55,12 @@ const config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -69,6 +70,6 @@ const config = {
     },
   },
   plugins: [animate],
-};
+});
 
 export default config;
