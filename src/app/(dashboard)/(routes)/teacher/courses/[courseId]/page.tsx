@@ -7,6 +7,7 @@ import { redirect } from 'next/navigation';
 import { IconBadge } from '@/components/icon-badge';
 import prismadb from '@/lib/prismadb';
 import DescriptionForm from './_components/description-form';
+import ImageForm from './_components/image-form';
 import TitleForm from './_components/title-form';
 
 // * Type definition for props
@@ -64,6 +65,7 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
             </div>
             <TitleForm initialData={course} courseId={course.id} />
             <DescriptionForm initialData={course} courseId={course.id} />
+            <ImageForm initialData={course} courseId={course.id} />
           </div>
         </div>
       </div>
