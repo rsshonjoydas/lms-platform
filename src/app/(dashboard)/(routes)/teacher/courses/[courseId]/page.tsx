@@ -6,10 +6,10 @@ import { redirect } from 'next/navigation';
 // ? Local modules
 import { IconBadge } from '@/components/icon-badge';
 import prismadb from '@/lib/prismadb';
+import AttachmentForm from './_components/attachment-form';
 import CategoryForm from './_components/category-form';
 import DescriptionForm from './_components/description-form';
 import ImageForm from './_components/image-form';
-import PriceForm from './_components/price-form';
 import TitleForm from './_components/title-form';
 
 // * Type definition for props
@@ -30,6 +30,13 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
     const course = await prismadb.course.findUnique({
       where: {
         id: params.courseId,
+      },
+      include: {
+        attachments: {
+          orderBy: {
+            createdAt: 'desc',
+          },
+        },
       },
     });
 
@@ -96,7 +103,7 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
                 <IconBadge icon={CircleDollarSign} />
                 <h2 className='text-xl'>Sell your course</h2>
               </div>
-              <PriceForm initialData={course} courseId={course.id} />
+              <AttachmentForm initialData={course} courseId={course.id} />
             </div>
           </div>
         </div>
