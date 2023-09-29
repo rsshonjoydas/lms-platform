@@ -49,7 +49,7 @@ const ChapterVideoForm = ({ initialData, courseId, chapterId }: ChapterVideoForm
           {!isEditing && !initialData.videoUrl && (
             <>
               <PlusCircle className='h-4 w-4 mr-2' />
-              Add an video
+              Add a video
             </>
           )}
           {!isEditing && initialData.videoUrl && (
@@ -84,7 +84,7 @@ const ChapterVideoForm = ({ initialData, courseId, chapterId }: ChapterVideoForm
         </div>
       )}
       {initialData.videoUrl && !isEditing && (
-        <div>
+        <div className='text-xs text-muted-foreground mt-2'>
           Videos can take a few minutes to process. Refresh the page if video dose not appear.
         </div>
       )}
