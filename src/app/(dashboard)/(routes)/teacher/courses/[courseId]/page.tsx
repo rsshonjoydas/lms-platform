@@ -1,6 +1,6 @@
 // ? Third-party libraries
 import { auth } from '@clerk/nextjs';
-import { CircleDollarSign, LayoutDashboard, ListChecks } from 'lucide-react';
+import { CircleDollarSign, File, LayoutDashboard, ListChecks } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
 // ? Local modules
@@ -13,6 +13,7 @@ import ChaptersForm from './_components/chapters-form';
 import { CourseActions } from './_components/course-actions';
 import DescriptionForm from './_components/description-form';
 import ImageForm from './_components/image-form';
+import PriceForm from './_components/price-form';
 import TitleForm from './_components/title-form';
 
 // * Type definition for props
@@ -123,6 +124,13 @@ const CourseIdPage: React.FC<CourseIdPageProps> = async ({ params }) => {
                 <div className='flex items-center gap-x-2'>
                   <IconBadge icon={CircleDollarSign} />
                   <h2 className='text-xl'>Sell your course</h2>
+                </div>
+                <PriceForm initialData={course} courseId={course.id} />
+              </div>
+              <div>
+                <div className='flex items-center gap-x-2'>
+                  <IconBadge icon={File} />
+                  <h2 className='text-xl'>Resources & Attachments</h2>
                 </div>
                 <AttachmentForm initialData={course} courseId={course.id} />
               </div>
