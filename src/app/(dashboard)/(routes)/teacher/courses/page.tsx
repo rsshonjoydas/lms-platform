@@ -1,13 +1,31 @@
-import Link from 'next/link';
+import { auth } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 
-import { Button } from '@/components/ui/button';
+import prismadb from '@/lib/prismadb';
+import { columns } from './_components/column';
+import { DataTable } from './_components/data-table';
 
-const CoursesPage = () => (
-  <div className='p-6'>
-    <Link href='/teacher/create'>
-      <Button>New Course</Button>
-    </Link>
-  </div>
-);
+const CoursesPage = async () => {
+  const { userId } = auth();
+
+  if (!userId) {
+    return redirect('/');
+  }
+
+  const courses = await prismadb.course.findMany({
+    where: {
+      userId,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+
+  return (
+    <div className='p-6'>
+      <DataTable columns={columns} data={courses} />
+    </div>
+  );
+};
 
 export default CoursesPage;
