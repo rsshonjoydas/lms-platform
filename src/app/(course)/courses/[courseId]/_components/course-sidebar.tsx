@@ -1,3 +1,4 @@
+import { CourseProgress } from '@/components/course-progress';
 import prismadb from '@/lib/prismadb';
 import { auth } from '@clerk/nextjs';
 import { Chapter, Course, UserProgress } from '@prisma/client';
@@ -13,7 +14,7 @@ interface CourseSidebarProps {
   progressCount: number;
 }
 
-const CourseSidebar = async ({ course }: CourseSidebarProps) => {
+const CourseSidebar = async ({ course, progressCount }: CourseSidebarProps) => {
   const { userId } = auth();
 
   if (!userId) {
@@ -33,6 +34,11 @@ const CourseSidebar = async ({ course }: CourseSidebarProps) => {
     <div className='h-full border-r flex flex-col overflow-y-auto shadow-sm'>
       <div className='p-8 flex flex-col border-b'>
         <h1 className='font-semibold'>{course.title}</h1>
+        {purchase && (
+          <div className='mt-10'>
+            <CourseProgress variant='success' value={progressCount} />
+          </div>
+        )}
       </div>
       <div className='flex flex-col w-full'>
         {course.chapters.map((chapter) => (
