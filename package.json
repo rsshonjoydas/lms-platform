@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=14.0.0",
+    "node": ">=18.0.0",
     "yarn": ">=1.22.0",
     "npm": "please-use-yarn"
   },
@@ -12,7 +12,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "prisma generate"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [

@@ -13,34 +13,101 @@
 ## Table of Contents
 
 - [How to run](#how-to-run)
-- [Manual Setup](#manual-setup)
+- [How to setup the initial project](#How-to-setup-the-initial-project)
 - [Contact](#contact)
 
 <!-- HOW TO RUN -->
 
-## How to run
+# Build an LMS Platform: Next.js 13, React, Tailwind, Stripe, Mux, Prisma, MongoDD
 
-Please follow the below instructions to run this project in your computer:
+This is a repository for Build an LMS Platform: Next.js 13, React, Stripe, Mux, Prisma, Tailwind, MongoDB
 
-1. Clone this repository
+> Key Features:
+
+- Browse & Filter Courses
+- Purchase Courses using Stripe
+- Mark Chapters as Completed or Uncompleted
+- Progress Calculation of each Course
+- Student Dashboard
+- Teacher mode
+- Create new Courses
+- Create new Chapters
+- Easily reorder chapter position with drag n’ drop
+- Upload thumbnails, attachments and videos using UploadThing
+- Video processing using Mux
+- HLS Video player using Mux
+- Rich text editor for chapter description
+- Authentication using Clerk
+- ORM using Prisma
+- MongoDB Database
+
+### Prerequisites
+
+**Node version 18.x.x**
+**Yarn version 1.22.x**
+
+### Start the app
+
+Certainly, if you're working on a Node.js project and you have a development script, such as `yarn dev`, that you typically use to run your application during development, you can include that step in your workflow as well. Here's the updated order of commands:
+
+1. **Clone this repository**:
+
    ```sh
    git clone git@github.com:rsshonjoydas/lms-platform.git
    ```
-2. Install this project using yarn
+
+2. **Environment Variables Setup**:
+   To rename the `.env.example` file to `.env` and add your environment-specific configuration, you can use the following command in a Unix-like shell (such as Linux or macOS):
+
+   ```bash
+   mv .env.example .env
+   ```
+
+   This command renames the `.env.example` file to `.env`.
+
+   After renaming the file, you can open the `.env` file using a text editor and add your environment-specific configuration variables and their values. For example:
 
    ```
+   DATABASE_URL=your_database_url_here
+   API_KEY=your_api_key_here
+   SECRET_KEY=your_secret_key_here
+   ```
+
+   Replace `"your_database_url_here"`, `"your_api_key_here"`, and `"your_secret_key_here"` with your actual configuration values. The `.env` file is commonly used to store sensitive or environment-specific configuration variables for your application.
+
+3. **Install packages**
+
+   ```shell
    yarn install
    ```
 
-3. First, run the development server:
+4. **Generate Prisma Client Code**:
+
+   ```bash
+   npx prisma generate
+   ```
+
+5. **Push Database Changes**:
+
+   ```bash
+   npx prisma db push
+   ```
+
+6. **Seed the Database**:
+
+   ```bash
+   node ./scripts/seed.ts
+   ```
+
+7. **Run Your Application in Development Mode**:
 
    ```bash
    yarn dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+8. Your project is accessible locally at the following address: [http://localhost:3000](http://localhost:3000)
 
-## Manual Setup
+### How to setup the initial project
 
 1.  Install Next JS
 
@@ -66,7 +133,7 @@ Please follow the below instructions to run this project in your computer:
 
       ```json
       "engines": {
-         "node": ">=14.0.0",
+         "node": ">=18.0.0",
          "yarn": ">=1.22.0",
          "npm": "please-use-yarn"
        }
