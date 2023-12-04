@@ -4,25 +4,27 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <p align="center">
-  <h3 align="center">NEXT LMS Platform</h3>
-  <div align="center"><h3>Project Link: <a href="https://github.com/rsshonjoydas/lms-platform">GitHub</a> or <a href="https://codesandbox.io/s/github/rsshonjoydas/lms-platform/tree/main">CodeSandbox</a></h3></div>
+  <h1 align="center">LMS Platform</h1>
+  <div align="center"><h3>Project Link: <a href="https://github.com/rsshonjoydas/lms-platform">GitHub</a></h3></div>
 </p>
+
+### Build an LMS Platform: Next.js 13, React, Tailwind, Stripe, Mux, Prisma, MongoDB
+
+![AI](docs/images/banner.png)
 
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
-- [How to run](#how-to-run)
-- [How to setup the initial project](#How-to-setup-the-initial-project)
+- [Key Features](#key-features)
+- [Prerequisites](#prerequisites)
+- [Start the app](#start-the-app)
+- [How to setup the initial project](#how-to-setup-the-initial-project)
 - [Contact](#contact)
 
-<!-- HOW TO RUN -->
+This is a repository for Build a SaaS AI Platform with Next.js 13, React, Tailwind, Prisma, Stripe.
 
-# Build an LMS Platform: Next.js 13, React, Tailwind, Stripe, Mux, Prisma, MongoDD
-
-This is a repository for Build an LMS Platform: Next.js 13, React, Stripe, Mux, Prisma, Tailwind, MongoDB
-
-> Key Features:
+### Features:
 
 - Browse & Filter Courses
 - Purchase Courses using Stripe
@@ -40,6 +42,8 @@ This is a repository for Build an LMS Platform: Next.js 13, React, Stripe, Mux, 
 - Authentication using Clerk
 - ORM using Prisma
 - MongoDB Database
+
+<!-- HOW TO RUN -->
 
 ### Prerequisites
 
@@ -81,41 +85,51 @@ Certainly, if you're working on a Node.js project and you have a development scr
    yarn install
    ```
 
-4. **Generate Prisma Client Code**:
+4. **Prisma Setup**:
 
-   ```bash
-   npx prisma generate
-   ```
+   - Generate Prisma Client Code:
 
-5. **Push Database Changes**:
+     ```bash
+     npx prisma generate
+     ```
 
-   ```bash
-   npx prisma db push
-   ```
+   - Push Database Changes:
 
-6. **Seed the Database**:
+     ```bash
+     npx prisma db push
+     ```
+
+   - Launch Prisma Studio: `optional`
+
+     ```bash
+     npx prisma studio
+     ```
+
+     Your `Prisma` database is accessible locally at the following address: [http://localhost:5555](http://localhost:5555)
+
+5. **Seed the Database**:
 
    ```bash
    node ./scripts/seed.ts
    ```
 
-7. **Run Your Application in Development Mode**:
+6. **Run Your Application in Development Mode**:
 
    ```bash
    yarn dev
    ```
 
-8. Your project is accessible locally at the following address: [http://localhost:3000](http://localhost:3000)
+   Your `project` is accessible locally at the following address: [http://localhost:3000](http://localhost:3000)
 
 ### How to setup the initial project
 
-1.  Install Next JS
+1.  **Install Next JS**
 
     ```sh
     yarn create next-app --typescript --tailwind --eslint
     ```
 
-2.  Engine Locking configuration `optional`
+2.  **Engine Locking configuration `optional`**
 
     - Create `.npmrc` file and add below the code
 
@@ -139,16 +153,31 @@ Certainly, if you're working on a Node.js project and you have a development scr
        }
       ```
 
-3.  Visual Studio Settings configuration `optional`
+3.  **Visual Studio Settings configuration `optional`**
 
     - ##### Get VSCode [Settings.json](https://github.com/rsshonjoydas/docs/blob/main/docs/vscode.md) file
 
-4.  Airbnb style guide setup
+4.  **Airbnb style guide setup**
 
     - ##### Get [eslintrc.json](https://github.com/rsshonjoydas/docs/blob/main/docs/airbnb-style-guide.md) file
 
-5.  Git Hooks for Husky
+5.  **Git Hooks for Husky**
+
     - ##### [How to use husky](https://github.com/rsshonjoydas/docs/blob/main/docs/husky.md)
+
+6.  **Shadcn Ui Setup**
+    - Initialize Shadcn ui
+      ```bash
+      npx shadcn-ui@latest init
+      ```
+    - How to use [Shadcn ui](https://ui.shadcn.com/) `optional`
+      ```bash
+      npx shadcn-ui@latest add button
+      ```
+    - Overwrite existing ui components `optional`
+      ```bash
+      npx shadcn-ui@latest add button --overwrite
+      ```
 
 ## Contact
 
